@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Lina & Karim — Notre Mariage</title>
+<meta name="description" content="Vous êtes invités à célébrer le mariage de Lina & Karim">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+
+<!-- ============ AUDIO ============ -->
+<audio id="theme-song" loop preload="auto">
+  <source src="assets/theme-song.mp3" type="audio/mpeg">
+</audio>
+
+<!-- ============ ENVELOPE LOCK SCREEN ============ -->
+<div id="envelope-screen" aria-label="Ouvrir l'invitation">
+  <div class="envelope-stage">
+    <div class="envelope" id="envelope">
+      <div class="env-back"></div>
+      <div class="env-flap env-flap--left"><div class="env-vine"></div></div>
+      <div class="env-flap env-flap--right"><div class="env-vine env-vine--mirror"></div></div>
+      <div class="env-flap env-flap--bottom"><div class="env-vine env-vine--bottom"></div></div>
+      <div class="env-flap env-flap--top"><div class="env-vine env-vine--top"></div></div>
+      <button class="wax-seal" id="wax-seal" aria-label="Toucher le cachet pour ouvrir l'invitation">
+        <span class="wax-seal__ring"></span>
+        <span class="wax-seal__glow"></span>
+        <span class="wax-seal__initials">L&amp;K</span>
+      </button>
+      <p class="env-cta">Touchez le cachet</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ INVITATION ============ -->
+<main id="invitation" aria-hidden="true">
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="petals" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <div class="hero-arch">
+      <div class="hero-arch__frame" aria-hidden="true"></div>
+      <svg class="hero-arch__vine hero-arch__vine--left" viewBox="0 0 120 620" preserveAspectRatio="none" aria-hidden="true"><use href="#vine-strand"/></svg>
+      <svg class="hero-arch__vine hero-arch__vine--right" viewBox="0 0 120 620" preserveAspectRatio="none" aria-hidden="true"><use href="#vine-strand"/></svg>
+
+      <p class="hero-eyebrow">Le mariage de</p>
+      <p class="hero-date" id="hero-date">27 . 09 . 2026</p>
+      <h1 class="hero-names">Lina<span class="hero-amp">&amp;</span>Karim</h1>
+      <div class="hero-rule" aria-hidden="true"></div>
+
+      <svg class="hero-swans" viewBox="0 0 320 130" aria-hidden="true">
+        <use href="#swans-pair"/>
+      </svg>
+
+      <a href="#invocation" class="scroll-cue" aria-label="Défiler pour découvrir l'invitation">
+        <span>Faites défiler</span>
+        <svg width="14" height="20" viewBox="0 0 14 20"><path d="M1 1l6 6 6-6M7 1v17" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+    <button class="music-toggle" id="music-toggle" aria-label="Mettre en pause la musique" aria-pressed="true">
+      <svg class="icon-pause" width="16" height="16" viewBox="0 0 16 16"><rect x="3" y="2" width="3.4" height="12" rx="0.8"/><rect x="9.6" y="2" width="3.4" height="12" rx="0.8"/></svg>
+      <svg class="icon-play" width="16" height="16" viewBox="0 0 16 16" hidden><path d="M4 2.5v11l9-5.5-9-5.5z"/></svg>
+    </button>
+  </section>
+
+  <!-- INVOCATION / QUOTE -->
+  <section class="panel panel--invocation" id="invocation">
+    <div class="ornament" aria-hidden="true">❧</div>
+    <p class="invocation-text">
+      Deux âmes, un seul chemin.<br>
+      Ce que le temps a patiemment tissé s'accomplit enfin —<br>
+      et nous serions honorés de le célébrer entourés de vous.
+    </p>
+    <p class="invocation-sub">Chers amis, chère famille,<br>rejoignez-nous pour une soirée d'amour, de rires et de souvenirs.</p>
+  </section>
+
+  <!-- COUNTDOWN -->
+  <section class="panel panel--countdown">
+    <p class="panel-eyebrow">La célébration commence dans</p>
+    <div class="countdown" id="countdown" role="timer" aria-live="off">
+      <div class="countdown-unit"><span class="countdown-num" id="cd-days">00</span><span class="countdown-label">Jours</span></div>
+      <div class="countdown-sep">:</div>
+      <div class="countdown-unit"><span class="countdown-num" id="cd-hours">00</span><span class="countdown-label">Heures</span></div>
+      <div class="countdown-sep">:</div>
+      <div class="countdown-unit"><span class="countdown-num" id="cd-mins">00</span><span class="countdown-label">Minutes</span></div>
+      <div class="countdown-sep">:</div>
+      <div class="countdown-unit"><span class="countdown-num" id="cd-secs">00</span><span class="countdown-label">Secondes</span></div>
+    </div>
+  </section>
+
+  <!-- SCHEDULE -->
+  <section class="panel panel--schedule" id="schedule">
+    <p class="panel-eyebrow">Le programme</p>
+    <h2 class="panel-title">Déroulé de la journée</h2>
+    <ol class="timeline">
+      <li class="timeline-item">
+        <span class="timeline-time">16:00</span>
+        <span class="timeline-line" aria-hidden="true"></span>
+        <div class="timeline-body">
+          <h3>Cérémonie</h3>
+          <p>Échange des vœux au jardin des Oliviers</p>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="timeline-time">17:30</span>
+        <span class="timeline-line" aria-hidden="true"></span>
+        <div class="timeline-body">
+          <h3>Cocktail</h3>
+          <p>Rafraîchissements et musique sur la terrasse</p>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="timeline-time">19:30</span>
+        <span class="timeline-line" aria-hidden="true"></span>
+        <div class="timeline-body">
+          <h3>Dîner de réception</h3>
+          <p>Dans la grande salle, sous les lustres</p>
+        </div>
+      </li>
+      <li class="timeline-item timeline-item--last">
+        <span class="timeline-time">22:00</span>
+        <span class="timeline-line" aria-hidden="true"></span>
+        <div class="timeline-body">
+          <h3>Ouverture du bal</h3>
+          <p>Première danse, puis la piste vous appartient</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- VENUE -->
+  <section class="panel panel--venue" id="venue">
+    <p class="panel-eyebrow">Le lieu</p>
+    <h2 class="panel-title">Domaine des Oliviers</h2>
+    <p class="venue-address">12 Route des Collines, Alger</p>
+    <div class="venue-map">
+      <iframe
+        title="Carte du lieu de réception"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=Alger&output=embed">
+      </iframe>
+      <span class="corner corner--tl" aria-hidden="true"></span>
+      <span class="corner corner--tr" aria-hidden="true"></span>
+      <span class="corner corner--bl" aria-hidden="true"></span>
+      <span class="corner corner--br" aria-hidden="true"></span>
+    </div>
+    <a class="btn btn--ghost" href="https://maps.google.com/?q=Alger" target="_blank" rel="noopener">Itinéraire</a>
+  </section>
+
+  <!-- DETAILS -->
+  <section class="panel panel--details">
+    <div class="details-grid">
+      <div class="details-card">
+        <div class="ornament ornament--sm" aria-hidden="true">✦</div>
+        <h3>Tenue de soirée</h3>
+        <p>Élégance conseillée. Merci d'éviter le blanc et l'ivoire, réservés à la mariée.</p>
+      </div>
+      <div class="details-card">
+        <div class="ornament ornament--sm" aria-hidden="true">✦</div>
+        <h3>Cadeaux</h3>
+        <p>Votre présence est le plus beau des cadeaux. Une liste est disponible sur demande.</p>
+      </div>
+      <div class="details-card">
+        <div class="ornament ornament--sm" aria-hidden="true">✦</div>
+        <h3>Enfants</h3>
+        <p>Une soirée pensée pour les adultes — merci de votre compréhension.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section class="panel panel--rsvp" id="rsvp">
+    <p class="panel-eyebrow">Confirmez votre présence</p>
+    <h2 class="panel-title">RSVP</h2>
+    <p class="rsvp-sub">Merci de répondre avant le 1er septembre 2026</p>
+
+    <form class="rsvp-form" id="rsvp-form" action="https://formspree.io/f/VOTRE_ID_FORMSPREE" method="POST">
+      <label class="field">
+        <span>Nom complet</span>
+        <input type="text" name="Nom" required autocomplete="name">
+      </label>
+      <label class="field">
+        <span>Email</span>
+        <input type="email" name="Email" required autocomplete="email">
+      </label>
+      <fieldset class="field field--radio">
+        <legend>Serez-vous des nôtres ?</legend>
+        <label><input type="radio" name="Presence" value="Oui, avec joie" required> Oui, avec joie</label>
+        <label><input type="radio" name="Presence" value="Je ne pourrai pas venir"> Je ne pourrai pas venir</label>
+      </fieldset>
+      <label class="field">
+        <span>Nombre d'invités (vous inclus)</span>
+        <input type="number" name="Invites" min="1" max="6" value="1">
+      </label>
+      <label class="field">
+        <span>Un message pour les mariés (facultatif)</span>
+        <textarea name="Message" rows="3"></textarea>
+      </label>
+      <button type="submit" class="btn btn--solid">Envoyer ma réponse</button>
+      <p class="rsvp-status" id="rsvp-status" role="status"></p>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p class="footer-monogram">L&amp;K</p>
+    <p class="footer-text">Avec toute notre gratitude,<br>Lina &amp; Karim</p>
+    <p class="footer-date">27 septembre 2026</p>
+  </footer>
+
+</main>
+
+<!-- ============ SVG SPRITES (shared, invisible) ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <g id="vine-strand">
+      <path d="M60 5 C40 40 80 70 55 105 C30 140 85 170 55 205 C25 240 85 270 55 305 C25 340 85 370 55 405 C25 440 85 470 55 505 C25 540 85 570 60 610"
+            fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.55"/>
+      <g fill="currentColor" opacity="0.7">
+        <circle cx="55" cy="80" r="3.5"/><circle cx="80" cy="70" r="2.2"/>
+        <circle cx="55" cy="180" r="3.5"/><circle cx="28" cy="175" r="2.2"/>
+        <circle cx="55" cy="280" r="3.5"/><circle cx="82" cy="290" r="2.2"/>
+        <circle cx="55" cy="380" r="3.5"/><circle cx="26" cy="390" r="2.2"/>
+        <circle cx="55" cy="480" r="3.5"/><circle cx="80" cy="470" r="2.2"/>
+      </g>
+    </g>
+    <g id="swans-pair">
+      <path id="swan-l" d="M40 100 C40 70 55 50 80 50 C90 50 96 56 96 63 C96 68 92 71 88 71 L110 63 L96 78 C100 90 95 100 85 105 C70 113 45 112 40 100 Z" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <circle cx="90" cy="60" r="1.6" fill="currentColor"/>
+      <use href="#swan-l" x="240" transform="scale(-1,1) translate(-560,0)"/>
+      <path d="M40 108 C90 122 190 122 240 108" fill="none" stroke="currentColor" stroke-width="1" opacity="0.35"/>
+    </g>
+  </defs>
+</svg>
+
+<script src="script.js"></script>
+</body>
+</html>
